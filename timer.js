@@ -9,7 +9,7 @@ var getElapsedSeconds = function(now, old) {
  * Makes an http request, and returns whether it took too long
 */
 var requestLengthSucks function(maxSeconds) {
-  maxLength = maxLength || 2;
+  maxSeconds = maxSeconds || 2;
   var startTime = new Date();
   makeRequest(maxSeconds, function(result){
     if (result.error) {
