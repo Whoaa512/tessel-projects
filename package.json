@@ -1,0 +1,25 @@
+{
+  "name": "tessel-projects",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Whoaa512/tessel-projects.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Whoaa512/tessel-projects/issues"
+  },
+  "homepage": "https://github.com/Whoaa512/tessel-projects",
+  "dependencies": {
+    "ambient-attx4": "^0.1.8",
+    "lodash": "^2.4.1",
+    "relay-mono": "^0.1.2",
+    "rfid-pn532": "^0.1.5"
+  }
+}
