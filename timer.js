@@ -1,28 +1,7 @@
 var http = require('http');
 
+var exports = module.exports;
 
-var getElapsedSeconds = function(now, old) {
-  return (now - old) / 1000;
-};
-
-/**
- * Makes an http request, and returns whether it took too long
-*/
-var connectionSpeedSucks function(maxSeconds) {
-  maxSeconds = maxSeconds || 2;
-  var startTime = new Date();
-  makeRequest(maxSeconds, function(result){
-    if (result.error) {
-      console.log(result.error);
-      return true;
-    }
-    else {
-      var elapsedSeconds = getElapsedSeconds(result.now, startTime);
-      console.log(elapsed);
-      return elapsedSeconds > maxSeconds;
-    }
-  });
-};
 
 var makeRequest = function(maxSeconds, cb) {
   var done = false;
@@ -45,3 +24,29 @@ var makeRequest = function(maxSeconds, cb) {
     cb({now: new Date(), err: err});
   });
 };
+
+var getElapsedSeconds = function(now, old) {
+  return (now - old) / 1000;
+};
+
+/**
+ * Makes an http request, and returns whether it took too long
+*/
+var connectionSpeedSucks = function(maxSeconds) {
+  maxSeconds = maxSeconds || 2;
+  var startTime = new Date();
+  makeRequest(maxSeconds, function(result){
+    if (result.error) {
+      console.log(result.error);
+      return true;
+    }
+    else {
+      var elapsedSeconds = getElapsedSeconds(result.now, startTime);
+      console.log(elapsed);
+      return elapsedSeconds > maxSeconds;
+    }
+  });
+};
+
+
+exports.connectionSpeedSucks = connectionSpeedSucks;
