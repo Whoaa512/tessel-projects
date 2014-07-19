@@ -16,19 +16,14 @@ var led1 = tessel.led[0].output(1);
 var led2 = tessel.led[1].output(0);
 
 
-// Wait for the module to connect
-relay.on('ready', function relayReady () {
+relay.on('ready', function(){
   console.log('Ready! Toggling relays...');
-  setInterval(function toggle() {
-    // Toggle relay channel 1
-    relay.toggle(1, function toggleOneResult(err) {
-      if (err) console.log("Err toggling 1", err);
-    });
-    // Toggle relay channel 2
-    relay.toggle(2, function toggleTwoResult(err) {
-      if (err) console.log("Err toggling 2", err);
-    });
-  }, 2000); // Every 2 seconds (2000ms)
+
+  var toggleIntervalSeconds = 0.5;
+  setInterval(function(){
+    led1.toggle();
+    led2.toggle();
+  }, toggleIntervalSeconds*1000);
 });
 
 // When a relay channel is set, it emits the 'latch' event

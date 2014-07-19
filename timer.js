@@ -8,7 +8,7 @@ var getElapsedSeconds = function(now, old) {
 /**
  * Makes an http request, and returns whether it took too long
 */
-var requestLengthSucks function(maxSeconds) {
+var connectionSpeedSucks function(maxSeconds) {
   maxSeconds = maxSeconds || 2;
   var startTime = new Date();
   makeRequest(maxSeconds, function(result){
@@ -32,7 +32,7 @@ var makeRequest = function(maxSeconds, cb) {
     if (!done) {
       cb({now: new Date(), err: null});
     }
-  }, maxSeconds*1000 + 1);
+  }, maxSeconds*1000 + 8);
 
   http.get('http://httpstat.us/200', function(res){
     res.on('end', function(){
