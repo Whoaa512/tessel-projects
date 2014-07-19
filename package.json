@@ -22,6 +22,7 @@
     "lodash": "^2.4.1",
     "relay-mono": "^0.1.2",
     "rfid-pn532": "^0.1.5",
+    "tessel-button": "0.0.1",
     "tessel-led": "0.0.1"
   }
 }
